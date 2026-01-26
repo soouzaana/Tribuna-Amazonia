@@ -19,8 +19,8 @@
       <div class="header-main">
         <!-- LOGO -->
         <div>
-          <h1 class="text-2xl md:text-3xl font-bold">Tribuna Amazônica</h1>
-          <p class="text-sm opacity-80 hidden sm:block">
+          <p class="text-4xl md:text-4xl sm:text-2xl font-bold">Tribuna Amazônica</p>
+          <p class="text-sm font-semibold opacity-80 hidden sm:block">
             Análise Jurídica, Doutrina e Julgados do Norte
           </p>
         </div>
@@ -81,6 +81,19 @@
         </a>
       </nav>
     </aside>
+
+    <!-- TICKER DE HEADLINES -->
+    <div class="ticker-bar">
+      <span class="ticker-label">Headlines</span>
+
+      <div class="ticker-wrapper">
+        <div class="ticker-track">
+          <span v-for="(item, i) in doubledHeadlines" :key="i" class="ticker-item">
+            {{ item }}
+          </span>
+        </div>
+      </div>
+    </div>
   </header>
 </template>
 
@@ -91,6 +104,15 @@ import IconLinkedIn from './icons/IconLinkedIn.vue'
 import IconInstagram from './icons/IconInstagram.vue'
 import IconTwitter from './icons/IconTwitter.vue'
 import IconFacebook from './icons/IconFacebook.vue'
+const headlinesTicker = [
+  'STF define nova interpretação sobre responsabilidade fiscal dos gestores públicos',
+  'Escritórios de advocacia adotam home office permanente',
+  'Bem-estar no trabalho: como advogados podem manter o equilíbrio',
+  'TRF1 publica decisão relevante sobre licitações públicas',
+  'Nova lei impacta a atuação de gestores municipais',
+]
+
+const doubledHeadlines = [...headlinesTicker, ...headlinesTicker]
 
 const mobileOpen = ref(false)
 
@@ -195,6 +217,7 @@ const menu = [
 /* MENU DESKTOP */
 .menu-div {
   padding: 0 11rem;
+  background-color: #065f46;
 }
 
 .menu-scroll {
@@ -202,8 +225,8 @@ const menu = [
   gap: 0.25rem;
   overflow-x: auto;
   white-space: nowrap;
-  background: #064e3b;
-  scrollbar-color: #a7f3d0 transparent;
+  background: #065f46;
+  scrollbar-color: #fefefe transparent;
 }
 
 .menu-scroll::-webkit-scrollbar {
@@ -211,7 +234,6 @@ const menu = [
 }
 
 .menu-scroll::-webkit-scrollbar-thumb {
-  background: #a7f3d0;
   border-radius: 10px;
 }
 
@@ -224,5 +246,61 @@ const menu = [
 
 .nav-item:hover {
   background: rgba(167, 243, 208, 0.15);
+}
+
+/* TICKER */
+.ticker-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #064e3b;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  overflow: hidden;
+}
+
+.ticker-label {
+  background: #047857;
+  color: #fefefe;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* área visível */
+.ticker-wrapper {
+  overflow: hidden;
+  flex: 1;
+  position: relative;
+}
+
+/* trilho animado */
+.ticker-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 3rem;
+  white-space: nowrap;
+  animation: ticker-scroll 20s linear infinite;
+}
+
+/* cada headline */
+.ticker-item {
+  font-size: 0.875rem;
+  color: #d1fae5;
+  opacity: 0.95;
+}
+
+/* animação contínua */
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 </style>
