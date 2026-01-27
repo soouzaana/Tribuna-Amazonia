@@ -188,6 +188,9 @@
         </div>
       </div>
     </section>
+
+    <!-- COLUNISTAS -->
+     <ColunistsSection/>
   </main>
 </template>
 
@@ -197,6 +200,7 @@ import NewsCard from '../components/NewsCard.vue'
 import Newsletter from '../components/NewsletterItem.vue'
 import EditorPickItem from '@/components/EditorPickItem.vue'
 import VideoSection from '@/components/VideoSection.vue'
+import ColunistsSection from '@/components/ColunistsSection.vue'
 
 const latest = [
   {
