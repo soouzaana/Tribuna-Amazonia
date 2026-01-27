@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <!-- Imagem com mini badge -->
+  <div class="relative">
+    <!-- Imagem com badges -->
     <div class="relative overflow-hidden rounded-2xl">
       <img
         :src="news.image"
@@ -8,12 +8,34 @@
         class="image w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
       />
 
+      <!-- Badge normal no canto superior direito -->
       <span
         v-if="news.badge"
         class="absolute top-2 right-2 bg-emerald-500/60 text-white text-xs font-semibold px-2 py-1 rounded-full"
       >
         {{ news.badge }}
       </span>
+
+      <!-- Badge "Live" no canto superior esquerdo -->
+      <span
+        v-if="news.isLive"
+        class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1"
+      >
+        <svg class="w-3 h-3 animate-pulse" fill="currentColor" viewBox="0 0 8 8">
+          <circle cx="4" cy="4" r="4" />
+        </svg>
+        Live
+      </span>
+
+      <!-- Botão play centralizado -->
+      <button
+        v-if="news.isLive"
+        class="absolute inset-0 m-auto w-12 h-12 rounded-full flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity"
+      >
+        <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M5 3v18l15-9z" />
+        </svg>
+      </button>
     </div>
 
     <!-- Título + meta -->
@@ -54,5 +76,13 @@ defineProps({
 .icon svg {
   width: 1rem;
   height: 1rem;
+}
+
+button {
+  background: #059669;
+}
+
+button svg{
+  color: white;
 }
 </style>

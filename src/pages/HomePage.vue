@@ -26,10 +26,6 @@
       </div>
     </section>
 
-    <section class="grid md:grid-cols-2 gap-6">
-      <NewsCard v-for="n in headlines" :key="n.title" :news="n" highlight />
-    </section>
-
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
       <!-- Últimas Notícias - ocupa 2/3 -->
       <section class="col-span-1 md:col-span-2">
@@ -108,6 +104,7 @@
       </div>
     </div>
 
+    <!-- JURISPRUDÊNCIA E DECISÕES -->
     <section class="space-y-6">
       <div class="flex justify-between items-baseline">
         <h2 class="section-title">Jurisprudência e Decisões</h2>
@@ -148,6 +145,19 @@
       </div>
     </section>
 
+    <!-- DIREITO ADMINISTRATIVO -->
+    <section>
+      <div>
+        <div class="flex justify-between items-baseline">
+          <h2 class="section-title">Direito Administrativo</h2>
+          <span class="section-link">Ver todos <IconArrow /></span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          <NewsCard v-for="n in administrative" :key="n.title" :news="n" />
+        </div>
+      </div>
+    </section>
     <Newsletter />
   </main>
 </template>
@@ -223,6 +233,25 @@ const law = [
     date: '20 Jan 2026',
     image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=100&h=100&fit=crop',
     badge: 'Decisões',
+  },
+]
+
+const administrative = [
+  {
+    title: 'TCU Publica Novo Entendimento Sobre Licitações e Contratos Administrativos',
+    date: '19 Jan 2026',
+    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop',
+    badge: 'Direito Administrativo',
+    comments: 8,
+    isLive: false,
+  },
+  {
+    title: 'Live: Debate Sobre a Nova Lei de Licitações',
+    date: '18 Jan 2026',
+    image: 'https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=800&h=600&fit=crop',
+    badge: 'Direito Administrativo',
+    comments: 45,
+    isLive: true, // <- identifica que é live
   },
 ]
 </script>
