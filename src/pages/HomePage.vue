@@ -174,6 +174,20 @@
         </div>
       </div>
     </section>
+
+    <!-- MAIS LIDAS -->
+    <section>
+      <div>
+        <div class="flex justify-between items-baseline">
+          <h2 class="section-title">Mais Lidas</h2>
+          <span class="section-link">Ver todos <IconArrow /></span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4 pt-3">
+          <EditorPickItem v-for="n in latest" :key="n.title + '-editor'" :news="n" />
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
