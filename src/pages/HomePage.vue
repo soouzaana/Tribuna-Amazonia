@@ -159,6 +159,7 @@
       </div>
     </section>
     <Newsletter />
+    <VideoSection/>
   </main>
 </template>
 
@@ -167,6 +168,7 @@ import IconArrow from '@/components/icons/IconArrow.vue'
 import NewsCard from '../components/NewsCard.vue'
 import Newsletter from '../components/NewsletterItem.vue'
 import EditorPickItem from '@/components/EditorPickItem.vue'
+import VideoSection from '@/components/VideoSection.vue'
 
 const latest = [
   {
