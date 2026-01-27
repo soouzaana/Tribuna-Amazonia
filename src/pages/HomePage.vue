@@ -108,10 +108,43 @@
       </div>
     </div>
 
-    <section>
-      <h2 class="text-xl font-bold mb-4">Jurisprudência e Decisões</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <NewsCard v-for="n in law" :key="n.title" :news="n" />
+    <section class="space-y-6">
+      <div class="flex justify-between items-baseline">
+        <h2 class="section-title">Jurisprudência e Decisões</h2>
+        <span class="section-link">Ver todos <IconArrow /></span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- CARD PRINCIPAL -->
+        <article class="law-featured lg:col-span-2">
+          <div
+            class="law-featured-bg"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=800&h=600&fit=crop');
+            "
+          ></div>
+
+          <div class="law-featured-overlay">
+            <span class="law-badge">Jurisprudência</span>
+
+            <h3 class="law-title">TJ-AM Inova com Sessões de Julgamento por Videoconferência</h3>
+
+            <p class="law-subtitle">
+              Tribunal de Justiça do Amazonas implementa sistema híbrido de julgamentos
+            </p>
+
+            <div class="law-meta">
+              <span>21 Jan 2026</span>
+              <span>•</span>
+              <span>12 comentários</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- LISTA LATERAL (EditorPickItem reutilizado) -->
+        <div class="flex flex-col gap-4">
+          <EditorPickItem v-for="n in law" :key="n.title" :news="n" />
+        </div>
       </div>
     </section>
 
@@ -178,11 +211,20 @@ const editorPick = [
   },
 ]
 
-const law = Array.from({ length: 4 }).map((_, i) => ({
-  title: `Decisão relevante do TRF1 nº ${i + 1}`,
-  author: 'Dra. Ana Paula Silva',
-  date: '21 Jan 2026',
-}))
+const law = [
+  {
+    title: 'STJ Define Novo Entendimento Sobre Improbidade Administrativa',
+    date: '21 Jan 2026',
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=100&h=100&fit=crop',
+    badge: 'Jurisprudência',
+  },
+  {
+    title: 'TRF1 Consolida Precedente em Matéria Tributária',
+    date: '20 Jan 2026',
+    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=100&h=100&fit=crop',
+    badge: 'Decisões',
+  },
+]
 </script>
 
 <style>
@@ -323,5 +365,106 @@ section img {
 
 section img:hover {
   transform: scale(1.05);
+}
+
+/* JURISPRUDENCIA E DECISOES */
+.law-featured {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  cursor: pointer;
+}
+
+.law-featured-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 1s ease;
+}
+
+.law-featured:hover .law-featured-bg {
+  transform: scale(1.05);
+}
+
+.law-featured-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.1));
+}
+
+.law-featured-overlay {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  right: 1.25rem;
+  z-index: 2;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.law-badge {
+  background: #10b981;
+  color: #064e3b;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  align-self: flex-start;
+  text-transform: uppercase;
+}
+
+.law-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.law-subtitle {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.law-meta {
+  font-size: 0.75rem;
+  opacity: 0.85;
+  display: flex;
+  gap: 0.4rem;
+}
+
+/* Lista lateral */
+.law-item {
+  background: white;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.law-item:hover {
+  background: #f3f4f6;
+}
+
+.law-item-badge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #10b981;
+  text-transform: uppercase;
+}
+
+.law-item-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+  line-height: 1.3;
+}
+
+.law-item-date {
+  font-size: 0.7rem;
+  color: #6b7280;
 }
 </style>

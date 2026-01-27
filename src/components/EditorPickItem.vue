@@ -7,9 +7,14 @@
 
     <!-- Conteúdo -->
     <div class="editor-content">
+      <span v-if="news.badge" class="editor-badge">
+        {{ news.badge }}
+      </span>
+
       <h3 class="editor-title">
         {{ news.title }}
       </h3>
+
       <span class="editor-date">
         {{ news.date }}
       </span>
@@ -60,6 +65,13 @@ defineProps({
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+}
+
+.editor-badge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #10b981;
+  text-transform: uppercase;
 }
 
 .editor-title {
