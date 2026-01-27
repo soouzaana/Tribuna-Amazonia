@@ -56,10 +56,36 @@
         </section>
 
         <!-- Siga no Instagram -->
-        <section>
+        <section class="bg-white rounded-lg p-4">
           <div class="flex justify-between items-center mb-2">
-            <h2 class="section-title text-base">Siga no Instagram</h2>
-            <span class="instagram-icon">📷</span>
+            <h2 class="instagram-title text-base">Siga no Instagram</h2>
+            <a
+              href="https://instagram.com/tribunaamazonica"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-pink-600 hover:text-pink-700 transition-colors"
+            >
+              <!-- SVG CORRIGIDO -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" />
+                <path
+                  d="M16 11.37A4 4 0 1 1 12.63 8
+                     4 4 0 0 1 16 11.37z"
+                  fill="none"
+                />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
           </div>
           <div class="grid grid-cols-3 gap-2 mb-3">
             <img
@@ -67,7 +93,7 @@
               :key="i"
               src="https://picsum.photos/100?random={{i}}"
               alt="Instagram"
-              class="w-full h-24 object-cover rounded"
+              class="w-full h-24 object-cover rounded-lg"
             />
           </div>
           <a
@@ -162,6 +188,7 @@ const law = Array.from({ length: 4 }).map((_, i) => ({
 <style>
 main {
   padding: 1.5rem 3rem;
+  background-color: #f9fafb;
 }
 
 /* Título da seção */
@@ -279,6 +306,13 @@ main {
 }
 
 /* Instagram section */
+
+.instagram-title {
+  font-weight: bold;
+  color: #111827;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
 .instagram-icon {
   font-size: 1.25rem;
 }

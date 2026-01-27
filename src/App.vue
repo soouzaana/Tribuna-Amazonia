@@ -5,10 +5,6 @@ import Footer from './components/FooterItem.vue'
 </script>
 
 <template>
-  <!-- <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav> -->
   <div class="app">
     <Header />
     <Home />
