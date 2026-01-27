@@ -159,7 +159,21 @@
       </div>
     </section>
     <Newsletter />
-    <VideoSection/>
+    <VideoSection />
+
+    <!-- OPINIÃO E DOUTRINA -->
+    <section>
+      <div>
+        <div class="flex justify-between items-baseline">
+          <h2 class="section-title">Opinião e Doutrina</h2>
+          <span class="section-link">Ver todos <IconArrow /></span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4 pt-3">
+          <EditorPickItem v-for="n in opinion" :key="n.title + '-editor'" :news="n" />
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -254,6 +268,17 @@ const administrative = [
     badge: 'Direito Administrativo',
     comments: 45,
     isLive: true, // <- identifica que é live
+  },
+]
+
+const opinion = [
+  {
+    title: 'Análise: Os Impactos da Reforma Tributária no Direito Administrativo',
+    author: 'Opinião',
+    date: '18 Jan 2026',
+    comments: 9,
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop',
+    badge: 'Opinião',
   },
 ]
 </script>
