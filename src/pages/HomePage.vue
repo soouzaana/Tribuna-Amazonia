@@ -51,7 +51,7 @@
             <span class="section-link">Ver todos <IconArrow /></span>
           </div>
           <div class="grid grid-cols-1 gap-6">
-            <NewsCard v-for="n in latest" :key="n.title + '-editor'" :news="n" />
+            <EditorPickItem v-for="n in editorPick" :key="n.title + '-editor'" :news="n" />
           </div>
         </section>
 
@@ -97,6 +97,7 @@
 import IconArrow from '@/components/icons/IconArrow.vue'
 import NewsCard from '../components/NewsCard.vue'
 import Newsletter from '../components/NewsletterItem.vue'
+import EditorPickItem from '@/components/EditorPickItem.vue'
 
 const latest = [
   {
@@ -112,7 +113,7 @@ const latest = [
     author: 'Redação',
     date: '20 Jan 2026',
     comments: 8,
-    image: 'https://images.unsplash.com/photo-1605902711622-cfb43c443f5e?w=400&h=250&fit=crop',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop',
     badge: 'Lifestyle',
   },
   {
@@ -120,32 +121,34 @@ const latest = [
     author: 'Redação',
     date: '19 Jan 2026',
     comments: 5,
-    image: 'https://images.unsplash.com/photo-1581091012184-16b8d3ed6f62?w=400&h=250&fit=crop',
+    image: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&h=600&fit=crop',
     badge: 'Welness',
   },
   {
-    title: 'TRF1 publica decisão sobre licitações públicas',
-    author: 'Redação',
+    title: 'Análise: Os Impactos da Reforma Tributária no Direito Administrativo',
+    author: 'Opinião',
     date: '18 Jan 2026',
     comments: 9,
-    image: 'https://images.unsplash.com/photo-1590608897129-79cf3f03763f?w=400&h=250&fit=crop',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop',
     badge: '',
   },
+]
+
+const editorPick = [
   {
-    title: 'Nova lei impacta gestores municipais',
-    author: 'Redação',
-    date: '17 Jan 2026',
-    comments: 3,
-    image: 'https://images.unsplash.com/photo-1573497019416-1469fef21b3b?w=400&h=250&fit=crop',
-    badge: '',
+    title: 'Inteligência Artificial e o Futuro do Direito: O Que Esperar nos Próximos Anos',
+    date: '15 Jan 2026',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop',
   },
   {
-    title: 'Decisão judicial relevante sobre meio ambiente',
-    author: 'Redação',
-    date: '16 Jan 2026',
-    comments: 6,
-    image: 'https://images.unsplash.com/photo-1581092580491-4d25f8f6348a?w=400&h=250&fit=crop',
-    badge: '',
+    title: '5 Dicas para Advogados Iniciantes Construírem uma Carreira de Sucesso',
+    date: '14 Jan 2026',
+    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=100&h=100&fit=crop',
+  },
+  {
+    title: 'A Importância da Mediação e Arbitragem no Direito Contemporâneo',
+    date: '13 Jan 2026',
+    image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=100&h=100&fit=crop',
   },
 ]
 

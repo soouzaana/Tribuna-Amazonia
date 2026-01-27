@@ -1,8 +1,13 @@
 <template>
   <div>
     <!-- Imagem com mini badge -->
-    <div class="relative">
-      <img :src="news.image" alt="" class="image w-full h-48 object-cover" />
+    <div class="relative overflow-hidden rounded-2xl">
+      <img
+        :src="news.image"
+        alt=""
+        class="image w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
+      />
+
       <span
         v-if="news.badge"
         class="absolute top-2 right-2 bg-emerald-500/60 text-white text-xs font-semibold px-2 py-1 rounded-full"
@@ -36,7 +41,7 @@ defineProps({
 </script>
 
 <style>
-.image{
+.image {
   border-radius: 1rem;
 }
 
