@@ -117,8 +117,8 @@ export default {
 
 <style scoped>
 .social-icon .icon {
-  fill: none;      /* Cor de preenchimento */
-  stroke: white;    
+  fill: none;      
+  stroke: white;
 }
 
 .botao {

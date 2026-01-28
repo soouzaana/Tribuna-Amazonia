@@ -190,7 +190,28 @@
     </section>
 
     <!-- COLUNISTAS -->
-     <ColunistsSection/>
+    <ColunistsSection />
+
+    <!-- INSTAGRAM -->
+    <div class="p-4 text-center">
+      <h1 class="text-2xl font-bold mb-1">Siga no Instagram</h1>
+      <p class="text-md text-gray-600 mb-4">
+        Acompanhe nossas análises e bastidores em
+        <span class="font-medium text-pink-600">@tribunaamazonica</span>
+      </p>
+      <InstagramSection />
+      <!-- Botão -->
+      <div class="flex justify-center">
+        <a
+          href="https://instagram.com/tribunaamazonica"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block text-center p-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-medium hover:from-purple-700 hover:to-pink-700 transition-all"
+        >
+          Seguir @tribunaamazonica
+        </a>
+      </div>
+    </div>
   </main>
 </template>
 
@@ -201,6 +222,7 @@ import Newsletter from '../components/NewsletterItem.vue'
 import EditorPickItem from '@/components/EditorPickItem.vue'
 import VideoSection from '@/components/VideoSection.vue'
 import ColunistsSection from '@/components/ColunistsSection.vue'
+import InstagramSection from '@/components/InstagramSection.vue'
 
 const latest = [
   {

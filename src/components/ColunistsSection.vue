@@ -8,7 +8,7 @@
       </div>
 
       <!-- Grid de colunistas -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4 pt-3">
+      <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-4 pt-3">
         <ColunistsCard v-for="n in colunists" :key="n.title + '-editor'" :news="n" />
       </div>
     </div>
