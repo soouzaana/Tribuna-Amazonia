@@ -293,7 +293,7 @@
       <h1 class="text-2xl font-bold text-gray-900 mb-1">Patrocinadores</h1>
       <p class="text-gray-600 mb-8">Empresas parceiras que apoiam o jornalismo de verdade</p>
 
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center px-9">
         <a
           v-for="sponsor in sponsors"
           :key="sponsor.name"
