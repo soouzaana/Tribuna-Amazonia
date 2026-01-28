@@ -287,6 +287,29 @@
         </div>
       </section>
     </div>
+
+    <!-- PATROCINADORES -->
+    <section class="py-12 text-center bg-gray-100 rounded-2xl mb-12">
+      <h1 class="text-2xl font-bold text-gray-900 mb-1">Patrocinadores</h1>
+      <p class="text-gray-600 mb-8">Empresas parceiras que apoiam o jornalismo de verdade</p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
+        <a
+          v-for="sponsor in sponsors"
+          :key="sponsor.name"
+          :href="sponsor.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex items-center justify-center bg-white rounded-xl p-4 shadow-sm hover:shadow-lg transition-all duration-300"
+        >
+          <img
+            :src="sponsor.logo"
+            :alt="sponsor.name"
+            class="max-h-14 object-contain grayscale opacity-70 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
+          />
+        </a>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -428,6 +451,39 @@ const lifestyle2 = [
     title: 'STF Define Nova Interpretação Sobre Responsabilidade Fiscal dos Gestores Públicos',
     date: '24 Jan 2026',
     image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200&h=600&fit=crop',
+  },
+]
+
+const sponsors = [
+  {
+    name: 'Empresa Alpha',
+    logo: 'https://dummyimage.com/200x100/000/fff&text=Alpha',
+    url: '#',
+  },
+  {
+    name: 'Empresa Beta',
+    logo: 'https://dummyimage.com/200x100/111/fff&text=Beta',
+    url: '#',
+  },
+  {
+    name: 'Empresa Gama',
+    logo: 'https://dummyimage.com/200x100/222/fff&text=Gama',
+    url: '#',
+  },
+  {
+    name: 'Empresa Delta',
+    logo: 'https://dummyimage.com/200x100/333/fff&text=Delta',
+    url: '#',
+  },
+  {
+    name: 'Empresa Ômega',
+    logo: 'https://dummyimage.com/200x100/444/fff&text=Omega',
+    url: '#',
+  },
+  {
+    name: 'Empresa Sigma',
+    logo: 'https://dummyimage.com/200x100/555/fff&text=Sigma',
+    url: '#',
   },
 ]
 </script>
