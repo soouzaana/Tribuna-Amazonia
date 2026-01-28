@@ -158,6 +158,7 @@
         </div>
       </div>
     </section>
+
     <Newsletter />
     <VideoSection />
 
@@ -193,7 +194,7 @@
     <ColunistsSection />
 
     <!-- INSTAGRAM -->
-    <div class="p-4 text-center">
+    <section class="p-8 text-center bg-gradient-to-br from-purple-50 to-pink-50 ronded-2xl">
       <h1 class="text-2xl font-bold mb-1">Siga no Instagram</h1>
       <p class="text-md text-gray-600 mb-4">
         Acompanhe nossas análises e bastidores em
@@ -211,6 +212,80 @@
           Seguir @tribunaamazonica
         </a>
       </div>
+    </section>
+
+    <!-- LIFESTYLE + WELLNESS -->
+    <div class="grid grid-cols-2 gap-9">
+      <!-- LIFESTYLE -->
+      <section>
+        <div>
+          <div class="flex justify-between items-baseline">
+            <h2 class="section-title">Lifestyle</h2>
+            <span class="section-link">Ver todos <IconArrow /></span>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <NewsCard v-for="n in lifestyle" :key="n.title" :news="n" />
+          </div>
+          <div class="pt-3">
+            <EditorPickItem
+              class="mb-4"
+              v-for="n in lifestyle2"
+              :key="n.title + '-editor'"
+              :news="n"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- WELNESS -->
+      <section>
+        <div>
+          <div class="flex justify-between items-baseline">
+            <h2 class="section-title">Wellness</h2>
+            <span class="section-link">Ver todos <IconArrow /></span>
+          </div>
+
+          <div class="p-8 bg-white">
+            <div class="pb-6 border-b border-gray-200">
+              <article class="law-featured lg:col-span-2">
+                <div
+                  class="law-featured-bg"
+                  style="
+                    background-image: url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=800&h=600&fit=crop');
+                  "
+                ></div>
+
+                <div class="law-featured-overlay">
+                  <span class="law-badge">Wellness</span>
+
+                  <h3 class="law-title">
+                    Bem-Estar no Trabalho: Como Advogados Podem Manter o Equilíbrio
+                  </h3>
+
+                  <p class="law-subtitle">
+                    Dicas práticas para profissionais do direito manterem a saúde mental em dia.
+                  </p>
+
+                  <div class="law-meta">
+                    <span>24 Jan 2026</span>
+                    <span>|</span>
+                    <span>12 comentários</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="pt-6">
+              <EditorPickItem
+                class="mb-4"
+                v-for="n in lifestyle2"
+                :key="n.title + '-editor'"
+                :news="n"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
 </template>
@@ -319,6 +394,40 @@ const opinion = [
     comments: 9,
     image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop',
     badge: 'Opinião',
+  },
+]
+
+const lifestyle = [
+  {
+    title: 'Estilo de Vida: Escritórios de Advocacia Adotam Home Office Permanente',
+    author: 'Redação',
+    date: '20 Jan 2026',
+    comments: 8,
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop',
+    badge: 'Lifestyle',
+  },
+]
+
+const lifestyle2 = [
+  {
+    title: 'Nova Lei de Registros Públicos Regulariza Fundiáaria na Amazônia',
+    date: '24 Jan 2026',
+    image: 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&h=600&fit=crop',
+  },
+  {
+    title: 'Análise: Os Impactos da Reforma Tributária no Direito Administrativo',
+    date: '24 Jan 2026',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop',
+  },
+  {
+    title: 'Direito Civíl: Novas Diretrizes Para Contratos Digitais',
+    date: '24 Jan 2026',
+    image: 'https://images.unsplash.com/photo-1554224154-22dec7ec8818?w=800&h=600&fit=crop',
+  },
+  {
+    title: 'STF Define Nova Interpretação Sobre Responsabilidade Fiscal dos Gestores Públicos',
+    date: '24 Jan 2026',
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200&h=600&fit=crop',
   },
 ]
 </script>
